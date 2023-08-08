@@ -1,0 +1,25 @@
+const {model, Schema} = require('mongoose');
+
+const TasksSchema = new Schema({
+    titulo:{
+        type:String,
+        required: true
+    },
+    descripcion:{
+        type:String,
+        required:true
+    },
+    isDone:{
+        type:Boolean,
+        default:false
+    },
+    isActive:{
+        type:Boolean,
+        default:true
+    }
+},{
+    timestamps:true,
+    versionKey:false
+})
+
+module.exports = model('Tasks', TasksSchema);
