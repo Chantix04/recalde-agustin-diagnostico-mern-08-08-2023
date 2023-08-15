@@ -9,9 +9,8 @@ const TasksSchema = new Schema({
         type:String,
         required:true
     },
-    isDone:{
-        type:Boolean,
-        default:false
+    estado:{
+        type:String
     },
     isActive:{
         type:Boolean,

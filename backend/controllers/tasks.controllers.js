@@ -2,7 +2,7 @@ const Tasks = require('../models/Tasks')
 const ctrlTasks = {};
 
 ctrlTasks.getTasks = async (_req,res) =>{
-    const tasks = await Tasks.find({isDone: false, isActive: true})
+    const tasks = await Tasks.find({isActive: true})
     return res.json(tasks)
 }
 
@@ -84,7 +84,7 @@ ctrlTasks.deleteTasks = async (req,res) => {
 
     try {
         await Tasks.findByIdAndUpdate(id, { isActive: false })
-        return res.json('Tarea eliminada correctamente');
+        return res.json({msg: 'Tarea eliminada correctamente'});
     } catch (err) {
         console.log(err.message)
         return res.status(500).json({

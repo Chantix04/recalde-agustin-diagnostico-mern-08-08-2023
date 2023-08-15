@@ -10,8 +10,7 @@ const {
 
 router.get('/tasks', getTasks);
 router.post('/tasks', postTasks);
-router.put('/completarTarea/:id', completeTasks);
-router.put('/tasks/:id', updateTasks)
+router.put('/tasks/:id', completeTasks);
 router.delete('/tasks/:id', deleteTasks);
 
 module.exports = router;
